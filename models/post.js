@@ -20,11 +20,11 @@ Post.init(
       allowNull: false,
     },
     ingredients: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: false,
     },
     instruction: {
-        type: DataTyypes.STRING,
+        type: DataTypes.STRING,
         allowNull: false,
     },
     date_created: {
