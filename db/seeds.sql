@@ -26,4 +26,9 @@ VALUES (
     ("American Food");
 
 
-    dish
+INSERT INTO dishes (dish, recipes, descriptions, ingredients, dish_picture_id)
+VALUES (
+
+)
+
+INSERT INTO posts 
