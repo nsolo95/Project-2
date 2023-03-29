@@ -24,7 +24,7 @@ Post.init(
         allowNull: false,
     },
     instruction: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: false,
     },
     date_created: {
