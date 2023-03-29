@@ -16,7 +16,7 @@ Post.init(
       allowNull: false,
     },
     description: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false,
     },
     ingredients: {
@@ -24,7 +24,7 @@ Post.init(
         allowNull: false,
     },
     instruction: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: false,
     },
     date_created: {
@@ -49,4 +49,4 @@ Post.init(
   }
 );
 
-module.exports = Project;
+module.exports = Post;
