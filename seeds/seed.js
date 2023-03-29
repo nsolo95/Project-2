@@ -12,7 +12,7 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  for (const post of projectData) {
+  for (const post of postData) {
     await Post.create({
       ...post,
       user_id: users[Math.floor(Math.random() * users.length)].id,
@@ -23,3 +23,14 @@ const seedDatabase = async () => {
 };
 
 seedDatabase();
+
+// const Seeds = require('seeds');
+
+// Seeds.define('users', {
+//     firstName: Seeds.firstName(),
+//     lastName: Seeds.lastName(),
+//     email: Seeds.email(),
+//     passwords: Seeds.passwords
+    
+//   });
+
