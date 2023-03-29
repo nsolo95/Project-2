@@ -1,11 +1,11 @@
 [{
-    "name": "Alice Johnson",
+    "name": "Alex Johnson",
     "email": "alicejohnson@example.com",
     "password": "password1"
   },
   {
-    "name": "Bob Lee",
-    "email": "boblee@example.com",
+    "name": "Henry Smith",
+    "email": "henrysmith@example.com",
     "password": "password2"
   },
   {
@@ -14,7 +14,12 @@
     "password": "password3"
   },
   {
-    "name": "David Kim",
-    "email": "davidkim@example.com",
+    "name": "Grace Wilson",
+    "email": "gracewilson@example.com",
     "password": "password4"
+  },
+  {
+    "name": "Isabella Nguyen",
+    "email": "isabellanguyen@example.com",
+    "password": "password5"
   }]
