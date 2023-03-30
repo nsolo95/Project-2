@@ -2,12 +2,11 @@
 <div class="row mb-4 post">
   <div class="col-md-5">
     <h2>
-      {{{get_emoji}}}
       <a href="/post/{{post.id}}">{{post.title}}</a>
     </h2>
     <p>
       <span for="img" aria-label="knife">🔪</span>
-      <span class="dollar-amount">{{format_amount post.title}}</span>
+      <span class="title">{{post.title}}</span>
     
     </p>
     <p>Created by {{post.user.name}} on {{format_date post.date_created}}</p>
