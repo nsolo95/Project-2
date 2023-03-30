@@ -1,20 +1,20 @@
-{{#each projects as |project| }}
-<div class="row mb-4 project">
+{{#each post as |post| }}
+<div class="row mb-4 post">
   <div class="col-md-5">
     <h2>
       {{{get_emoji}}}
-      <a href="/project/{{project.id}}">{{project.name}}</a>
+      <a href="/post/{{post.id}}">{{post.title}}</a>
     </h2>
     <p>
-      <span for="img" aria-label="money">💲</span>
-      <span class="dollar-amount">{{format_amount project.needed_funding}}</span>
-      needed!
+      <span for="img" aria-label="knife">🔪</span>
+      <span class="dollar-amount">{{format_amount post.title}}</span>
+    
     </p>
-    <p>Created by {{project.user.name}} on {{format_date project.date_created}}</p>
+    <p>Created by {{post.user.name}} on {{format_date post.date_created}}</p>
   </div>
   <div class="col-md-7">
     <p>
-      {{project.description}}
+      {{post.description}}
     </p>
   </div>
 </div>
