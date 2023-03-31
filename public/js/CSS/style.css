@@ -1,3 +1,79 @@
+/* Header */
+header {
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+header a {
+  color: #fff;
+  text-decoration: none;
+}
+
+header a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+header nav a {
+  color: #fff;
+  margin-right: 1rem;
+}
+
+header nav button {
+  background-color: #fff;
+  border: none;
+  color: #333;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+}
+
+/* Main */
+main {
+  padding: 2rem;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 767px) {
+  header {
+    padding: 1rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header nav {
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  header nav a {
+    display: block;
+    margin-bottom: 1rem;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  header {
+    padding: 1rem;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+}
 
 
 
