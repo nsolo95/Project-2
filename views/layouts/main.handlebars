@@ -5,38 +5,94 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Welcome to Sous Chef</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/css/style.css">
+  <!-- Materialize CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <!-- Custom CSS -->
+  <style>
+    body {
+      background-color: #f1f1f1;
+      font-family: 'Bubbly', cursive;
+    }
+    
+    .header {
+      background-color: #fff;
+      padding: 1rem;
+      box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .header h2 {
+      margin: 0;
+      font-size: 2rem;
+      font-weight: 600;
+      background: linear-gradient(to right, #7F00FF, #E100FF);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .header a {
+      color: #333;
+    }
+    
+    .header a:hover {
+      color: #665;
+    }
+    
+    .logout-button {
+      margin-left: 1rem;
+    }
+    
+    .main-container {
+      background-color: #fff;
+      padding: 2rem;
+      box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #fff;
+      box-shadow: 0px -3px 10px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+  <!-- Custom font -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bubbly&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-        <span role="img" aria-label="croissant">🥐</span>
-        <a href="/">Chef Posts</a>
-      </h1>
-      <nav>
-        {{#if logged_in}}
-        <a href="/profile">profile</a> |
-        <button class="no-button" id="logout">logout</button>
-        {{else}}
-        <a href="/login">login</a>
-        {{/if}}
-      </nav>
-    </header>
-    <main class="container container-fluid mt-5">
-      {{{ body }}}
-    </main>
-    <footer>
-      
-    </footer>
+  <div class="Welcome">
+    <h1 class="center-align teal-text text-darken-2">
+      Sous Chef
+    </h1>
   </div>
-
-  <!-- Render script for logged in users only -->
-  {{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
-</body>
-
-</html>
+  <div class="header">
+    <header class="row">
+      <div class="col s12 m11">
+        <h2>
+          <span class="teal-text text-darken-2" role="img" aria-label="croissant">
+            <i class="fas fa-bread-slice"></i>
+          </span>
+          <a href="/" class="teal-text text-darken-2">Chef Posts</a>
+        </h2>
+      </div>
+      <div class="col s12 m1 right-align btn">
+        <nav>
+          {{#if logged_in}}
+          <a href="/profile" class="teal-text text-darken-2">Profile</a>
+          <a href="#" class="btn-small  darken-2 logout-button">Logout</a>
+          {{else}}
+          <a href="/login" class="teal-text text-darken-2">Login</a>
+          {{/if}}
+        </nav>
+      </div>
+    </header>
+  </div>
+  <main class="container main-container">
+    {{{ body }}}
+  </main>
+  <footer class="footer">
+    <p>
+      &copy; 2023 Sous Chef
+   
