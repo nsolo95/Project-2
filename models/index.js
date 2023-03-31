@@ -1,6 +1,6 @@
-const User = require('./User');
-const Post = require('./Post');
-const Kitchen = require('./Kitchen')
+const User = require('./user');
+const Post = require('./post');
+const Kitchen = require('./kitchen')
 
 User.hasMany(Post, {
   foreignKey: 'user_id',
