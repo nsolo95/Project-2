@@ -48,6 +48,17 @@ router.post('/login', async (req, res) => {
   }
 });
 
+router.get('/:id', async (req, res) => {
+  // if (req.session.logged_in) {
+    const {id} = req.params
+    console.log('aaaa', id)
+    const foundUser = await User.findOne({ where: { id: id } });
+    res.json( foundUser )
+  // } else {
+  //   res.status(404).end();
+  // }
+})
+
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {
@@ -59,3 +70,6 @@ router.post('/logout', (req, res) => {
 });
 
 module.exports = router;
+
+
+//  NOTES create nnew field to user model to referance their posts. when a post is created it needs to  be added to the users data. After that, you want to make the get route we were creating, make a join statement to get all their posts. once you have all that data, you need to display that on the UI using handlebars
