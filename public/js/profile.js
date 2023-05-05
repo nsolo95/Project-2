@@ -10,7 +10,7 @@ const newPostHandler = async (event) => {
 
 
 
-    // if (yourPost) {
+    if (yourPost) {
         try {
         const response = await fetch('api/posts', {
             method: 'POST',

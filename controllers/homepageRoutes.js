@@ -55,11 +55,17 @@ router.get('/profile', withAuth, async (req, res) => {
       attributes: { exclude: ['password'] },
       include: [{ model: Post }],
     });
-
+    const userPost = await Post.findAll({
+      where: {
+        user_id: req.session.user_id
+      }
+    })
+    const post = userPost.map((post) => post.get({ plain: true }));
     const user = userData.get({ plain: true });
-
+console.log('this is the user', post)
     res.render('profile', {
       ...user,
+      post,
       logged_in: true
     });
   } catch (err) {

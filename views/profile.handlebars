@@ -34,20 +34,24 @@
     </form>
   </div>
 
-  {{#if post.length}}
+  {{#if logged_in}}
   <div class="col-md-6 post-list">
-    <h3>Current Recipes:</h3>
-
-    {{#each post as |post|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/post/{{post.id}}">{{post.name}}</a></h4>
+    <h3>Your Recipes:</h3>
+    
+      {{#each post as |post|}}
+      <div class="row mb-2">
+        <div class="col-md-8">
+          <h4><a href="/post/{{post.id}}">{{post.title}}</a></h4>
+        </div>
+        <div>
+          <p>{{post.body}}</p>
+        </div>
+        <div class="col-md-4">
+          <button class="btn btn-sm btn-danger" data-id="{{post.id}}">DELETE</button>
+        </div>
       </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{post.id}}">DELETE</button>
-      </div>
-    </div>
-    {{/each}}
+      {{/each}}
+    
   </div>
   {{/if}}
 </div>
