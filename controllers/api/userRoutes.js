@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Post } = require('../../models');
 
 router.post('/', async (req, res) => {
   try {
@@ -48,16 +48,21 @@ router.post('/login', async (req, res) => {
   }
 });
 
-router.get('/:id', async (req, res) => {
-  // if (req.session.logged_in) {
-    const {id} = req.params
-    console.log('aaaa', id)
-    const foundUser = await User.findOne({ where: { id: id } });
-    res.json( foundUser )
-  // } else {
-  //   res.status(404).end();
-  // }
-})
+router.get('/:user_id', async (req, res) => {
+  const { user_id } = req.params;
+
+  try {
+    const user = await Post.findAll({where: {
+      user_id: user_id,
+    },})
+
+    res.json(user);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
 
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
@@ -70,6 +75,3 @@ router.post('/logout', (req, res) => {
 });
 
 module.exports = router;
-
-
-//  NOTES create nnew field to user model to referance their posts. when a post is created it needs to  be added to the users data. After that, you want to make the get route we were creating, make a join statement to get all their posts. once you have all that data, you need to display that on the UI using handlebars

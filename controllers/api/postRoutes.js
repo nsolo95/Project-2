@@ -12,7 +12,7 @@ router.post('/', withAuth, async (req, res) => {
       instruction: req.body.yourPostIns,
       user_id: req.session.user_id,
     });
-
+  
     res.status(200).json(newPost);
   } catch (err) {
     res.status(400).json(err);
@@ -38,5 +38,6 @@ router.delete('/:id', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
 
 module.exports = router;

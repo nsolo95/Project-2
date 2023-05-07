@@ -35,11 +35,13 @@ User.init(
         len: [8],
       },
     },
-    userpost_id: {
+    userPost_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-      autoIncrement: true,
-    }
+      references: {
+        model: 'post',
+        key: 'id',
+      },
+    },
   },
   {
     hooks: {
