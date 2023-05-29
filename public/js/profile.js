@@ -10,9 +10,9 @@ const newPostHandler = async (event) => {
 
 
 
-    if (yourPost) {
+    if (yourPostTitle && yourPostDesc && yourPostIngr && yourPostIns) {
         try {
-        const response = await fetch('api/posts', {
+        const response = await fetch('/api/posts', {
             method: 'POST',
             body: JSON.stringify({ yourPostTitle, yourPostDesc, yourPostIngr, yourPostIns }),
             headers: { 'Content-Type': 'application/json' },
@@ -23,7 +23,7 @@ const newPostHandler = async (event) => {
             res.status(400).json(err);
           }
 
-    // }
+    }
 
 }
 document.querySelector('.new-post-form')

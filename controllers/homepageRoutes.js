@@ -13,11 +13,11 @@ router.get('/', async (req, res) => {
       ],
     });
     // this will sirialize
-    const post = postData.map((post) => post.get({ plain: true }));
-
+    const posts = postData.map((post) => post.get({ plain: true }));
+    console.log(posts)
     // Passing serialized data
     res.render('homepage', { 
-      post, 
+      posts, 
       logged_in: req.session.logged_in 
     });
   } catch (err) {
